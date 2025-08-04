@@ -1,0 +1,148 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Martel Sans', sans-serif;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+}
+
+/* Header Section */
+.first {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.trending-text {
+  font-size: 32px;
+  font-weight: 900;
+  color: red;
+}
+
+.xman {
+  width: 100px;
+}
+
+/* Carousel Wrapper */
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0 50px; /* space for arrows */
+  margin-top: 30px;
+}
+
+/* Arrows */
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  font-size: 30px;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-btn:hover {
+  background-color: rgba(255, 0, 0, 0.8);
+}
+
+.scroll-btn.left {
+  left: 10px;
+}
+
+.scroll-btn.right {
+  right: 10px;
+}
+
+/* Scroll Container */
+.trending-wrapper {
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+.scroll-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+/* Movie Cards */
+.card {
+  display: inline-block;
+  width: 200px;
+  height: 300px;
+  flex-shrink: 0;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  background-color: #111;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(255, 0, 0, 0.4);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Rank Badge */
+.rank {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  background: rgba(255, 0, 0, 0.85);
+  padding: 8px 12px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  z-index: 2;
+}
+
+/* Responsive (for tablets/mobiles) */
+@media (max-width: 768px) {
+  .card {
+    width: 140px;
+    height: 220px;
+  }
+
+  .scroll-btn {
+    font-size: 24px;
+    padding: 10px;
+  }
+
+  .trending-text {
+    font-size: 24px;
+  }
+
+  .xman {
+    width: 80px;
+  }
+
+  .carousel-wrapper {
+    padding: 0 30px;
+  }
+}

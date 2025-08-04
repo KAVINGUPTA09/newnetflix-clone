@@ -1,0 +1,461 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Martel Sans', sans-serif;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+/* Main background */
+.main {
+  background-image: url("assets/images/kp.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Dark overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1));
+  z-index: 1;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  max-width: 70vw;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+  height: 42px;
+  padding: 20px 0;
+  position: relative;
+  z-index: 2;
+}
+
+nav img {
+  width: 144px;
+  position: absolute;
+}
+
+nav button {
+  z-index: 10;
+  margin-left: 10px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+}
+.language-selector {
+  position: relative;
+  display: inline-block;
+}
+
+.lang-btn {
+  background-color: transparent;
+  color: white;
+  border: 1px solid gray;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.lang-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  background-color: #000;
+  min-width: 80px;
+  border: 1px solid gray;
+  z-index: 1;
+  list-style: none;
+  padding: 0;
+  margin-top: 5px;
+  border-radius: 4px;
+}
+
+.dropdown li a {
+  color: white;
+  padding: 10px 15px;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown li a:hover {
+  background-color: #e50914;
+  color: white;
+}
+
+.dropdown.show {
+  display: block;
+}
+.lang-dropdown {
+  display: none;
+  position: absolute;
+  top: 35px; /* reduced from 50px */
+  right: 0;
+  background-color: #111;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 4px 0;
+  z-index: 10;
+  font-size: 14px;
+  width: 60px;
+  height: 12px; /* shrink to fit content */
+}
+
+.lang-dropdown.show {
+  display: block;
+}
+
+.lang-dropdown button {
+  background: none;
+  border: none;
+  color: white;
+  width: 100%;
+  text-align: left;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.lang-dropdown button:hover {
+  background-color: #333;
+}
+
+/* Sign In button */
+.sign-btn {
+  font-size: 14px;
+  font-family: unset;
+  background: rgb(229, 9, 20);
+  color: white;
+  padding: 0.25rem 1rem;
+  border: 1px solid red;
+  border-radius: 8px;
+  font-weight: 800;
+}
+
+/* Hero section */
+.hero {
+  height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  gap: 23px;
+  padding: 0 20px;
+}
+
+.hero > :first-child {
+  font-weight: 900;
+  font-size: 48px;
+}
+
+.hero > :nth-child(2) {
+  font-size: 24px;
+}
+
+.hero > :nth-child(3) {
+  font-weight: 300;
+  font-size: 20px;
+}
+
+/* Email input + button */
+.email-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.email-container input {
+  padding: 7px 101px 8px 14px;
+  width: 300px;
+  max-width: 80vw;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  background-color: rgba(23, 23, 23, 0.7);
+  border: 1px solid rgba(246, 238, 238, 0.5);
+  color: whitesmoke;
+}
+
+.email-container button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: red;
+  color: white;
+  font-weight: 400;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.arrow {
+  padding-left: 6px;
+  font-weight: 800;
+}
+
+/* Content section layout */
+.first {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  max-width: 80vw;
+  padding: 50px 10px;
+  color: white;
+  gap: 30px;
+}
+
+.text {
+  flex: 1;
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+.text h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Section images */
+.secImg {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.secImg img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+.tv-container {
+  position: relative;
+  max-width: 500px;
+}
+
+.tv-container img {
+  width: 100%;
+  display: block;
+  z-index: 2;
+  position: relative;
+}
+
+.tv-container .tv-video {
+  position: absolute;
+  top: 20%;
+  left: 13.5%;
+  width: 73%;
+  height: 60%;
+  object-fit: contain;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Section separation line */
+.separation {
+  height: 7px;
+  background-color: #222;
+}
+
+/* Text blocks in second/third sections */
+.first.second span,
+.first.third span {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.first.second > div,
+.first.third > div {
+  flex: 1;
+}
+
+.first.third .section-title {
+  font-size: 2.4rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.first.third .section-subtext {
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* FAQ Section */
+.faq {
+  background: black;
+  color: white;
+  padding: 34px;
+}
+
+.faq h2 {
+  text-align: center;
+  font-size: 58px;
+}
+
+.faqbox {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  justify-content: space-between;
+  max-width: 90vw;
+  margin: 24px auto;
+  background-color: red;
+  font-size: 21px;
+  font-family: unset;
+  transition: all 0.5s ease-out;
+  cursor: pointer;
+  gap: 2px;
+}
+
+.faqbox:hover {
+  background-color: blue;
+  color: white;
+}
+
+.faqbox svg {
+  filter: invert(1);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  margin-top: 0;
+  font-size: 18px;
+  line-height: 1.5;
+  color: white;
+}
+
+.faqbox:hover .faq-answer {
+  max-height: 500px;
+  margin-top: 16px;
+}
+
+/* Footer Section */
+footer {
+  color: #aaa;
+  max-width: 80vw;
+  margin: auto;
+  padding: 60px 0;
+  font-size: 14px;
+}
+
+footer .questions {
+  padding-bottom: 24px;
+  font-size: 16px;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.footer-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-item a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-item a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .first {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .secImg img {
+    width: 90vw;
+  }
+
+  nav {
+    max-width: 90vw;
+  }
+
+  .faq h2 {
+    font-size: 36px;
+  }
+}
+.faqbox button{
+  background-color:purple;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  font-size: medium;
+  color:white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+.recommend-btn-box {
+  display: flex;
+  justify-content: center;
+  background-color: red;
+  padding: 20px;
+  margin: 20px 0;
+}
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  background-color: red;
+}
+
+.recommend-link {
+  background-color: purple;
+  color: white;
+  font-size: 14px;         /* smaller text */
+  padding: 12px 11px;       /* smaller box */
+  text-decoration: none;
+  box-shadow: 2px 2px 3px black;
+  border: 1px solid gray;
+  font-family: sans-serif;
+}
+
+
+.recommend-link:hover {
+  background-color: #5d0079;
+  transform: scale(1.05);
+}
+
